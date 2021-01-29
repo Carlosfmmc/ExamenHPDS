@@ -10,6 +10,8 @@ public class Analizer_ {
 
     Analizer analizer;
     int quantity;
+    int sum;
+
     @Before
     public void init(){
         analizer = new Analizer();
@@ -23,8 +25,15 @@ public class Analizer_ {
         assertTrue(21==quantity);
         quantity = analizer.analyze(1000, 2000, 7)[0];
         assertTrue(85==quantity);
-        quantity = analizer.analyze(1000, 3000, 7)[0];
-        assertTrue(141==quantity);
+    }
+    @Test
+    public void should_return_other_sum() {
+        sum = analizer.analyze(1000, 2000, 3)[1];
+        assertTrue(0==sum);
+        sum = analizer.analyze(1000, 2000, 4)[1];
+        assertTrue(0==sum);
+        sum = analizer.analyze(1000, 2000, 7)[1];
+        assertTrue(0==sum);
     }
 
 
@@ -36,6 +45,7 @@ public class Analizer_ {
             for(int i = i0; i<=i1; i++){
                 if(sumOfDigitsAreGreater(i, i2)){
                     r[0]++;
+
                 }
             }
             return r;
