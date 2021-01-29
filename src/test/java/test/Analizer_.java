@@ -29,11 +29,11 @@ public class Analizer_ {
     @Test
     public void should_return_other_sum() {
         sum = analizer.analyze(1000, 2000, 3)[1];
-        assertTrue(0==sum);
+        assertTrue(12555==sum);
         sum = analizer.analyze(1000, 2000, 4)[1];
-        assertTrue(0==sum);
+        assertTrue(23665==sum);
         sum = analizer.analyze(1000, 2000, 7)[1];
-        assertTrue(0==sum);
+        assertTrue(99986==sum);
     }
 
 
@@ -45,7 +45,7 @@ public class Analizer_ {
             for(int i = i0; i<=i1; i++){
                 if(sumOfDigitsAreGreater(i, i2)){
                     r[0]++;
-
+                    r[1] +=i;
                 }
             }
             return r;
